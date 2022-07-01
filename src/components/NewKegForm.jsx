@@ -26,6 +26,7 @@ function NewKegForm(props) {
         <input type="text" name="kegIBU" placeholder="IBUs" />
         <input type="text" name="kegAlcContent" placeholder="ABV" />
         <input type="integer" name="kegPrice" placeholder="Price Per Pint" />
+        <button type="submit">Submit Form</button>
       </form>
     </React.Fragment>
   );
