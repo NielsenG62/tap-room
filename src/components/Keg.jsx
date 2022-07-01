@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Button from "react-bootstrap/Button";
 
 class Keg extends React.Component {
   constructor(props) {
@@ -24,9 +25,13 @@ class Keg extends React.Component {
             <h3>{this.props.kegBrand}</h3>
             <p>${this.props.kegPrice}</p>
           </div>
-          <button onClick={this.decrement} className="counter">
+          <Button
+            variant="warning"
+            onClick={this.decrement}
+            className="counter"
+          >
             Pour a pint
-          </button>
+          </Button>
           <p>Pints Left: {this.state.count}</p>
           <hr />
         </div>

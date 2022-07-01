@@ -2,6 +2,7 @@ import React from "react";
 import KegDetail from "./KegDetail";
 import NewKegForm from "./NewKegForm";
 import KegList from "./KegList";
+import Button from "react-bootstrap/Button";
 
 class KegControl extends React.Component {
   constructor(props) {
@@ -64,7 +65,9 @@ class KegControl extends React.Component {
     return (
       <React.Fragment>
         {currentlyVisibleState}
-        <button onClick={this.handleClick}>{buttonText}</button>
+        <Button variant="info" onClick={this.handleClick}>
+          {buttonText}
+        </Button>
       </React.Fragment>
     );
   }

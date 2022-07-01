@@ -2,7 +2,7 @@
 
 #### By _**Gabe Nielsen**_
 
-#### _This is the bones of a react app that a user can add and track kegs._
+#### _This is the bones of a react app that lets a user add and track kegs._
 
 ## Technologies Used
 
