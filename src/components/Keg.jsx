@@ -23,3 +23,5 @@ Keg.propTypes = {
   kegAlcContent: PropTypes.integer,
   kegPrice: PropTypes.integer,
 };
+
+export default Keg;
