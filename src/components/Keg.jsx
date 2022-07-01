@@ -12,7 +12,8 @@ class Keg extends React.Component {
 
   decrement = () => {
     if (this.state.count > 0) {
-      this.setState({ count: this.state.count - 1 });
+      const newCount = (this.state.count -= 1);
+      this.setState({ count: newCount });
     }
   };
 
@@ -32,6 +33,7 @@ class Keg extends React.Component {
           >
             Pour a pint
           </Button>
+          {/* This line is probably causing problems, I might have to move the count up to KegList */}
           <p>Pints Left: {this.state.count}</p>
           <hr />
         </div>

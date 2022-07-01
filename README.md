@@ -28,7 +28,7 @@ _This is a React app that tracks kegs. When a user clicks to add a keg, they wil
 
 ## Known Issues
 
-- _None as of this commit_
+- _Any time the page switches state, the pint counter resets. I suspect it is because the count state is on Keg. It may have to move up a level to KegList._
 
 ## License
 
