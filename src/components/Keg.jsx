@@ -6,18 +6,12 @@ class Keg extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 124,
+      count: this.props.pintCount,
     };
   }
 
-  decrement = () => {
-    if (this.state.count > 0) {
-      const newCount = (this.state.count -= 1);
-      this.setState({ count: newCount });
-    }
-  };
-
   render() {
+    console.log(this.props);
     return (
       <React.Fragment>
         <div className="kegDiv">
@@ -28,13 +22,12 @@ class Keg extends React.Component {
           </div>
           <Button
             variant="warning"
-            onClick={this.decrement}
+            onClick={() => this.props.decrement(this.props.id)}
             className="counter"
           >
             Pour a pint
           </Button>
-          {/* This line is probably causing problems, I might have to move the count up to KegList */}
-          <p>Pints Left: {this.state.count}</p>
+          <p>Pints Left: {this.props.pintCount}</p>
           <hr />
         </div>
       </React.Fragment>
@@ -46,11 +39,13 @@ Keg.propTypes = {
   kegName: PropTypes.string,
   kegBrand: PropTypes.string,
   kegType: PropTypes.string,
-  kegIBU: PropTypes.string,
-  kegAlcContent: PropTypes.string,
-  kegPrice: PropTypes.string,
+  kegIBU: PropTypes.number,
+  kegAlcContent: PropTypes.number,
+  kegPrice: PropTypes.number,
   id: PropTypes.string,
   whenKegClicked: PropTypes.func,
+  pintCount: PropTypes.number,
+  decrement: PropTypes.func,
 };
 
 export default Keg;

@@ -17,6 +17,8 @@ function KegList(props) {
           kegPrice={keg.kegPrice}
           id={keg.id}
           key={keg.id}
+          pintCount={keg.pintCount}
+          decrement={props.decrement}
         />
       ))}
     </React.Fragment>
@@ -26,6 +28,7 @@ function KegList(props) {
 KegList.propTypes = {
   kegList: PropTypes.array,
   onKegSelection: PropTypes.func,
+  decrement: PropTypes.func,
 };
 
 export default KegList;

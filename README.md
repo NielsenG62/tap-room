@@ -17,7 +17,7 @@ _This is a React app that tracks kegs. When a user clicks to add a keg, they wil
 
 ## Components
 
-![components model](./public/outline.png)
+![components model](./public/outline1.png)
 
 ## Setup/Installation Requirements
 
