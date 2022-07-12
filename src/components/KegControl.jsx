@@ -15,13 +15,19 @@ class KegControl extends React.Component {
   }
 
   decrement = (id) => {
-    const selectedKeg = this.state.mainKegList.filter(
-      (keg) => keg.id === id
-    )[0];
-    if (selectedKeg.pintCount > 0) {
-      const newCount = (selectedKeg.pintCount = selectedKeg.pintCount -= 1);
-      selectedKeg.setState({ count: newCount });
-    }
+    const tempList = this.state.mainKegList.map((keg) => {
+      if (keg.id === id) {
+        if (keg.pintCount > 0) {
+          return {
+            ...keg,
+            pintCount: keg.pintCount - 1,
+          };
+        } else {
+          return keg;
+        }
+      }
+    });
+    this.setState({ mainKegList: tempList });
   };
 
   handleClick = () => {
@@ -53,7 +59,6 @@ class KegControl extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     let currentlyVisibleState = null;
     let buttonText = null;
     if (this.state.selectedKeg != null) {
